@@ -19,10 +19,10 @@ module.exports = {
 
 				// PD
 				const PDGuild = client.guilds.cache.get(Roles.PD.server);
-				if (!PDGuild) return console.log(`PD Guild "${Roles.PD.server}" not found!`);
+				if (!PDGuild) return console.log(`PD Guild "${Roles.PD.server}" not found! update`);
 
 				const PDMember = await PDGuild.members.fetch(member.id).catch(() => console.log("something when wrong when fetching PDMember"));
-				if (!PDMember) return console.log(`User ${member.user.tag} is not in the PD Guild!`)
+				if (!PDMember) return console.log(`User ${member.user.tag} is not in the PD Guild! update`)
 
 				const PDroles = PDMember.roles.cache.map(role => role.id);
 				console.log("PD MEMBER", PDroles);
@@ -45,10 +45,10 @@ module.exports = {
 
 				// EMS
 				const EMSGuild = client.guilds.cache.get(Roles.EMS.server);
-				if (!EMSGuild) return console.log(`EMS Guild "${Roles.EMS.server}" not found!`);
+				if (!EMSGuild) return console.log(`EMS Guild "${Roles.EMS.server}" not found! update`);
 
 				const EMSMember = await EMSGuild.members.fetch(member.id).catch(() => console.log("something when wrong when fetching EMSMember"));
-				if (!EMSMember) return console.log(`User ${member.user.tag} is not in the EMS Guild!`)
+				if (!EMSMember) return console.log(`User ${member.user.tag} is not in the EMS Guild! update`)
 
 				const EMSroles = EMSMember.roles.cache.map(role => role.id);
 				console.log("EMS MEMBER", EMSroles);
