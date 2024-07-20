@@ -1,10 +1,10 @@
 {
 	"PD": {
-		"server": "",
-		"default": "",
-		"GOV": "",
-		"EMS": "",
-		"BCSO": ""
+		"server": "1144358325576814634",
+		"default": "nao_tem",
+		"GOV": "nao_sei_se_tem",
+		"EMS": "1144358768616947762",
+		"BCSO": "1144358764116447395"
 	},
 	"GOV": {
 		"server": "1262454167792779264",
@@ -14,17 +14,17 @@
 		"BCSO": "1263945933620777112"
 	},
 	"EMS": {
-		"server": "",
-		"default": "",
-		"PD": "",
-		"GOV": "",
-		"BCSO": ""
+		"server": "1135326298319884491",
+		"default": "1135330470855454853",
+		"PD": "1135339331003883530",
+		"GOV": "nao_sei_se_tem",
+		"BCSO": "1149025545556869162"
 	},
 	"BCSO": {
-		"server": "",
-		"default": "",
-		"PD": "",
-		"GOV": "",
-		"EMS": ""
+		"server": "1147878941630136360",
+		"default": "1147878941974077478",
+		"PD": "so e dada a direção",
+		"GOV": "so e dada a direção",
+		"EMS": "so e dada a direção"
 	}
 }
