@@ -1,11 +1,12 @@
 const color = require("colors");
-const { GuildMember } = require("discord.js");
+const { GuildMember, Client } = require("discord.js");
 const Roles = require("../../roles.json");
 
 module.exports = {
 	name: "guildMemberAdd",
 	/**
 	 * @param {GuildMember} member
+	 * @param {Client} client
 	 */
 	async execute(member, client) {
 

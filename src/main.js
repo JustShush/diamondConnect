@@ -1,8 +1,17 @@
-// DiscordBOT2.0
+// Diamond Connect
+/**
+ * Conecta os cargos entre os varios servidores das ORGs legais do Diamond RP
+ *
+ * GOV: https://discord.gg/bvevxnfsYP
+ * LSPD: https://discord.gg/vJnPDJhYRW
+ * EMS: https://discord.gg/3zQyAPrT
+ * BCSO: https://discord.gg/UWWfpGgHE3
+ * https://github.com/JustShush/diamondConnect
+ */
 const color = require('colors');
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, GatewayIntentBits, Partials, Collection, Message } = require("discord.js");
+const { Client, GatewayIntentBits, Partials} = require("discord.js");
 const { Guilds, GuildMembers } = GatewayIntentBits;
 
 const client = new Client({
@@ -11,23 +20,6 @@ const client = new Client({
 });
 
 client.config = require("../config.json");
-client.commands = new Collection();
-const foldersPath = path.join(__dirname, 'Commands');
-const commandFolders = fs.readdirSync(foldersPath);
-
-for (const folder of commandFolders) {
-	const commandsPath = path.join(foldersPath, folder);
-	const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-	for (const file of commandFiles) {
-		const filePath = path.join(commandsPath, file);
-		const command = require(filePath);
-		if ('data' in command && 'execute' in command) {
-			client.commands.set(command.data.name, command);
-		} else {
-			console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
-		}
-	}
-}
 
 const eventsPath = path.join(__dirname, 'Events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
@@ -61,4 +53,3 @@ process.on('rejectionHandled', (err) => {
 })
 
 client.login(client.config.TOKEN);
-require("../deploy.js")

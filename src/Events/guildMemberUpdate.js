@@ -1,8 +1,14 @@
 const color = require("colors");
+const { GuildMember, Client } = require("discord.js");
 const Roles = require("../../roles.json");
 
 module.exports = {
 	name: "guildMemberUpdate",
+	/**
+	 * @param {GuildMember} oldMember
+	 * @param {GuildMember} newMember
+	 * @param {Client} client
+	 */
 	async execute(oldMember, newMember, client) {
 		console.log("update!!!", `${newMember.user.username} | ${newMember.user.id}`);
 
