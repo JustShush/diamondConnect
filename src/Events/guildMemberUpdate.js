@@ -10,7 +10,7 @@ module.exports = {
 	 * @param {Client} client
 	 */
 	async execute(oldMember, newMember, client) {
-		console.log("update!!!", `${newMember.user.username} | ${newMember.user.id}`);
+		console.log(`[${getTimestamp(1)}] update!`, `${newMember.user.username} | ${newMember.user.id}`);
 
 		const guild = oldMember.guild;
 
@@ -36,7 +36,7 @@ module.exports = {
 							// check if the member received a PD role in GOV server
 							if (role == Roles.GOV.default && !PDMember.roles.cache.has(Roles.PD.GOV)) {
 								const rolE = PDMember.guild.roles.cache.get(Roles.PD.GOV);
-								await PDMember.roles.add(rolE);
+								if (rolE) await PDMember.roles.add(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the PD Guild! update`)
@@ -50,7 +50,7 @@ module.exports = {
 							// check if the member received a EMS role in GOV server
 							if (role == Roles.GOV.default && !EMSMember.roles.cache.has(Roles.EMS.GOV)) {
 								const rolE = EMSMember.guild.roles.cache.get(Roles.EMS.GOV);
-								await EMSMember.roles.add(rolE);
+								if (rolE) await EMSMember.roles.add(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the EMS Guild! update`)
@@ -64,7 +64,7 @@ module.exports = {
 							// check if the member received a BCSO role in GOV server
 							if (role == Roles.GOV.default && !BCSOMember.roles.cache.has(Roles.BCSO.GOV)) {
 								const rolE = BCSOMember.guild.roles.cache.get(Roles.BCSO.GOV);
-								await BCSOMember.roles.add(rolE);
+								if (rolE) await BCSOMember.roles.add(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the BCSO Guild! update`)
@@ -86,7 +86,7 @@ module.exports = {
 							// check if the member received a PD role in GOV server
 							if (role == Roles.GOV.default && PDMember.roles.cache.has(Roles.PD.GOV)) {
 								const rolE = PDMember.guild.roles.cache.get(Roles.PD.GOV);
-								await PDMember.roles.remove(rolE);
+								if (rolE) await PDMember.roles.remove(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the PD Guild! update`)
@@ -100,7 +100,7 @@ module.exports = {
 							// check if the member received a EMS role in GOV server
 							if (role == Roles.GOV.default && EMSMember.roles.cache.has(Roles.EMS.GOV)) {
 								const rolE = EMSMember.guild.roles.cache.get(Roles.EMS.GOV);
-								await EMSMember.roles.remove(rolE);
+								if (rolE) await EMSMember.roles.remove(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the EMS Guild! update`)
@@ -114,7 +114,7 @@ module.exports = {
 							// check if the member received a BCSO role in GOV server
 							if (role == Roles.GOV.default && BCSOMember.roles.cache.has(Roles.BCSO.GOV)) {
 								const rolE = BCSOMember.guild.roles.cache.get(Roles.BCSO.GOV);
-								await BCSOMember.roles.remove(rolE);
+								if (rolE) await BCSOMember.roles.remove(rolE);
 							}
 						}
 						else console.log(`User ${newMember.user.tag} is not in the BCSO Guild! update`)

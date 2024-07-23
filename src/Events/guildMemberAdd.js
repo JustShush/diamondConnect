@@ -1,6 +1,7 @@
 const color = require("colors");
 const { GuildMember, Client } = require("discord.js");
 const Roles = require("../../roles.json");
+const { getTimestamp } = require("../Functions/getTimestamp");
 
 module.exports = {
 	name: "guildMemberAdd",
@@ -12,11 +13,11 @@ module.exports = {
 
 		const { user, guild } = member;
 
-		console.log(`${user.username} has joined "${guild.name}"`.brightMagenta.bold);
+		console.log(`[${getTimestamp(1)}] ${user.username} has joined "${guild.name}"`.brightMagenta.bold);
 
 		switch (guild.id) {
 			case `${Roles.GOV.server}`: //? GOV
-				console.log("PD!");
+				console.log("GOV!");
 
 				// PD
 				let PDGuild = client.guilds.cache.get(Roles.PD.server);
@@ -33,7 +34,7 @@ module.exports = {
 						// then adds the corresponding role in the GOV server
 						if (PDroles[i] == Roles.PD.default && !member.roles.cache.has(Roles.GOV.PD)) {
 							const role = member.guild.roles.cache.get(Roles.GOV.PD);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the PD Guild! update`);
@@ -51,7 +52,7 @@ module.exports = {
 					for (let i = 0; i < EMSroles.length - 1; i++) {
 						if (EMSroles[i] == Roles.EMS.default && !member.roles.cache.has(Roles.GOV.EMS)) {
 							const role = member.guild.roles.cache.get(Roles.GOV.EMS);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the EMS Guild! update`);
@@ -69,7 +70,7 @@ module.exports = {
 					for (let i = 0; i < BCSOroles.length - 1; i++) {
 						if (BCSOroles[i] == Roles.BCSO.default && !member.roles.cache.has(Roles.GOV.BCSO)) {
 							const role = member.guild.roles.cache.get(Roles.GOV.BCSO);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the BCSO Guild! update`);
@@ -93,7 +94,7 @@ module.exports = {
 						// then adds the corresponding role in the PD server
 						if (GOVroles[i] == Roles.GOV.default && !member.roles.cache.has(Roles.PD.GOV)) {
 							const role = member.guild.roles.cache.get(Roles.PD.GOV);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the GOV Guild! update`);
@@ -111,7 +112,7 @@ module.exports = {
 					for (let i = 0; i < EMSroles.length - 1; i++) {
 						if (EMSroles[i] == Roles.EMS.default && !member.roles.cache.has(Roles.PD.EMS)) {
 							const role = member.guild.roles.cache.get(Roles.PD.EMS);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the EMS Guild! update`);
@@ -129,7 +130,7 @@ module.exports = {
 					for (let i = 0; i < BCSOroles.length - 1; i++) {
 						if (BCSOroles[i] == Roles.BCSO.default && !member.roles.cache.has(Roles.PD.BCSO)) {
 							const role = member.guild.roles.cache.get(Roles.PD.BCSO);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the BCSO Guild! update`);
@@ -154,7 +155,7 @@ module.exports = {
 						// then adds the corresponding role in the GOV server
 						if (PDroles[i] == Roles.PD.default && !member.roles.cache.has(Roles.EMS.PD)) {
 							const role = member.guild.roles.cache.get(Roles.EMS.PD);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the PD Guild! update`);
@@ -172,7 +173,7 @@ module.exports = {
 					for (let i = 0; i < GOVroles.length - 1; i++) {
 						if (GOVroles[i] == Roles.GOV.default && !member.roles.cache.has(Roles.EMS.GOV)) {
 							const role = member.guild.roles.cache.get(Roles.EMS.GOV);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the GOV Guild! update`);
@@ -190,7 +191,7 @@ module.exports = {
 					for (let i = 0; i < BCSOroles.length - 1; i++) {
 						if (BCSOroles[i] == Roles.BCSO.default && !member.roles.cache.has(Roles.EMS.BCSO)) {
 							const role = member.guild.roles.cache.get(Roles.EMS.BCSO);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the BCSO Guild! update`);
@@ -215,7 +216,7 @@ module.exports = {
 						// then adds the corresponding role in the GOV server
 						if (PDroles[i] == Roles.PD.default && !member.roles.cache.has(Roles.BCSO.PD)) {
 							const role = member.guild.roles.cache.get(Roles.BCSO.PD);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the PD Guild! update`);
@@ -233,7 +234,7 @@ module.exports = {
 					for (let i = 0; i < GOVroles.length - 1; i++) {
 						if (GOVroles[i] == Roles.GOV.default && !member.roles.cache.has(Roles.BCSO.GOV)) {
 							const role = member.guild.roles.cache.get(Roles.BCSO.GOV);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the GOV Guild! update`);
@@ -251,7 +252,7 @@ module.exports = {
 					for (let i = 0; i < EMSroles.length - 1; i++) {
 						if (EMSroles[i] == Roles.EMS.default && !member.roles.cache.has(Roles.BCSO.EMS)) {
 							const role = member.guild.roles.cache.get(Roles.BCSO.EMS);
-							await member.roles.add(role);
+							if (role) await member.roles.add(role);
 						}
 					}
 				} else console.log(`User ${member.user.tag} is not in the EMS Guild! update`);

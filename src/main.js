@@ -11,7 +11,7 @@
 const color = require('colors');
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, GatewayIntentBits, Partials} = require("discord.js");
+const { Client, GatewayIntentBits, Partials } = require("discord.js");
 const { Guilds, GuildMembers } = GatewayIntentBits;
 
 const client = new Client({
