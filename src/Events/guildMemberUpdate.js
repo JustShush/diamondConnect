@@ -1,6 +1,7 @@
 const color = require("colors");
 const { GuildMember, Client } = require("discord.js");
 const Roles = require("../../roles.json");
+const { getTimestamp } = require("../Functions/getTimestamp.js");
 
 module.exports = {
 	name: "guildMemberUpdate",
