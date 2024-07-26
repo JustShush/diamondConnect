@@ -212,17 +212,14 @@ module.exports = {
 				if (GOVGuild) {
 					GOVMember = await GOVGuild.members.fetch(member.id).catch(() => console.log("something when wrong when fetching GOVMember"));
 					if (GOVMember) {
-						console.log("got BCSO membver!")
 						const GOVroles = GOVMember.roles.cache.map(role => role.id);
 						console.log("GOV MEMBER", GOVroles);
 
 						// run throw all the member roles then add the corresponding role to the GOV server
 						for (let i = 0; i < GOVroles.length - 1; i++) {
-							console.log("before role")
 							if (GOVroles[i] == Roles.GOV.default && !member.roles.cache.has(Roles.BCSO.GOV)) {
 								const role = member.guild.roles.cache.get(Roles.BCSO.GOV);
 								if (role) await member.roles.add(role);
-								console.log("added role")
 							}
 						}
 					} else console.log(`User ${member.user.tag} is not in the GOV Guild! update`);
