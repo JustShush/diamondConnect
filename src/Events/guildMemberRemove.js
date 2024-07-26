@@ -26,7 +26,7 @@ module.exports = {
 		let BCSOMember;
 
 		switch (guild.id) {
-			case `${Roles.GOV.server}`: //? GOV
+			case Roles.GOV.server: //? GOV
 
 				//! PD
 				PDGuild = client.guilds.cache.get(Roles.PD.server);
@@ -83,7 +83,7 @@ module.exports = {
 				} else console.log(`BCSO Guild "${Roles.BCSO.server}" not found! update`);
 
 				break;
-			case `${Roles.PD.server}`: //? PD
+			case Roles.PD.server: //? PD
 
 				//! GOV
 				GOVGuild = client.guilds.cache.get(Roles.GOV.server);
@@ -141,7 +141,7 @@ module.exports = {
 
 				break;
 
-			case `${Roles.EMS.server}`: //? EMS
+			case Roles.EMS.server: //? EMS
 
 				//! GOV
 				GOVGuild = client.guilds.cache.get(Roles.GOV.server);
@@ -196,7 +196,7 @@ module.exports = {
 
 				break;
 
-			case `${Roles.BCSO.server}`: //? BCSO
+			case Roles.BCSO.server: //? BCSO
 
 				//! GOV
 				GOVGuild = client.guilds.cache.get(Roles.GOV.server);

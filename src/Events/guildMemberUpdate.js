@@ -22,7 +22,7 @@ module.exports = {
 		const removedRoles = oldRoles.filter(roles => !newRoles.has(roles.id)).map(role => role.id);
 
 		switch (guild.id) {
-			case `${Roles.GOV.server}`: // GOV
+			case Roles.GOV.server: // GOV
 
 				if (addedRoles.length > 0) {
 					addedRoles.forEach(async role => {
@@ -126,7 +126,7 @@ module.exports = {
 
 				break;
 
-			case `${Roles.PD.server}`: // LSPD
+			case Roles.PD.server: // LSPD
 
 				if (addedRoles.length > 0) {
 					addedRoles.forEach(async role => {
@@ -228,7 +228,7 @@ module.exports = {
 
 				break;
 
-			case `${Roles.EMS.server}`: // EMS server
+			case Roles.EMS.server: // EMS server
 
 				if (addedRoles.length > 0) {
 					addedRoles.forEach(async role => {
@@ -331,7 +331,7 @@ module.exports = {
 
 				break;
 
-			case `${Roles.BCSO.server}`: // BCSO server
+			case Roles.BCSO.server: // BCSO server
 
 				if (addedRoles.length > 0) {
 					addedRoles.forEach(async role => {
