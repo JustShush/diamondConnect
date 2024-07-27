@@ -205,7 +205,6 @@ module.exports = {
 				break;
 
 			case Roles.BCSO.server: //? BCSO
-				console.log("BCSO join!")
 
 				// GOV
 				GOVGuild = client.guilds.cache.get(Roles.GOV.server);

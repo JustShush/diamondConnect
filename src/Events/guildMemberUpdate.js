@@ -11,7 +11,7 @@ module.exports = {
 	 * @param {Client} client
 	 */
 	async execute(oldMember, newMember, client) {
-		console.log(`[${getTimestamp(1)}] update!`, `${newMember.user.username} | ${newMember.user.id}`);
+		console.log(`[${getTimestamp(1)}] update! ${newMember.user.username} | ${newMember.user.id} / ${newMember.guild.name}`);
 
 		const guild = oldMember.guild;
 
