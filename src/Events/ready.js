@@ -37,6 +37,6 @@ module.exports = {
 			console.log(`${guild.name} | ${guild.id} | ${guild.memberCount} Members`.brightRed);
 		})
 
-		console.log(`${client.user.username} is online!\nIn ${client.guilds.cache.size} Servers!`.brightMagenta.bold);
+		console.log(`${client.user.username} is online!\nIn ${client.guilds.cache.size} Servers! ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0)} Users!`.brightMagenta.bold);
 	}
 }
